@@ -38,11 +38,11 @@
     <div>
         <span style="font-weight:bold" th:text="${idtoken}"></span>
     </div>
-<!--    <div>Fullname: <span th:text="${idtoken.name}"></span></div>-->
+    <div>LastName: <span th:text="${idtoken.family_name}"></span></div>
     <div>Address: <span th:text="${idtoken.address.address}"></span></div>
     <div>Email: <span th:text="${idtoken.email}"></span></div>
 <!--    <div>Website: <span th:text="${idtoken.website}"></span></div>-->
-<!--    <div>Phone: <span th:text="${idtoken.phone_number}"></span></div>-->
+    <div>Phone: <span th:text="${idtoken.phone_number}"></span></div>
 </div>
 <div><a href="https://localhost:9444/oidc/logout">Logout WSO2</a> </div>
 <div><a href="/logout">Logout Spring</a> </div>
