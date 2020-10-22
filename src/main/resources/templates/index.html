@@ -1,0 +1,50 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Homepage</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Success</h1>-->
+<!--<div><a href="https://localhost:9444/oidc/logout">Logout</a> </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2 Login </title>
+</head>
+<body>
+<div style="float: right">
+    <div style="float:left">
+        <span style="font-weight:bold">User: <span th:text=${userName}></span> </span>
+    </div>
+    <div style="float:none">&nbsp;</div>
+    <div style="float:right">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
+    </div>
+</div>
+<h1>OAuth 2.0 Login with Spring Security</h1>
+<div>
+    You are successfully logged in as <span style="font-weight:bold" th:text="${userName}"></span>
+</div>
+<div>
+    <span>IdToken:</span>
+    <div>
+        <span style="font-weight:bold" th:text="${idtoken}"></span>
+    </div>
+<!--    <div>Fullname: <span th:text="${idtoken.name}"></span></div>-->
+    <div>Address: <span th:text="${idtoken.address.address}"></span></div>
+    <div>Email: <span th:text="${idtoken.email}"></span></div>
+<!--    <div>Website: <span th:text="${idtoken.website}"></span></div>-->
+<!--    <div>Phone: <span th:text="${idtoken.phone_number}"></span></div>-->
+</div>
+<div><a href="https://localhost:9444/oidc/logout">Logout WSO2</a> </div>
+<div><a href="/logout">Logout Spring</a> </div>
+</body>
+</html>
