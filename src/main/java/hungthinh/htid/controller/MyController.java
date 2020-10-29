@@ -3,6 +3,7 @@ package hungthinh.htid.controller;
 //import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.GetMapping;
 
+import hungthinh.htid.model.UserResponse;
 import hungthinh.htid.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -14,6 +15,8 @@ import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Map;
 
 @Controller
 public class MyController {
@@ -45,7 +48,11 @@ public class MyController {
 
     @GetMapping("/user")
     public String user(Model model) {
-        System.out.println("AAAA = " + userService.getUser());
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        Authentication authentication = securityContext.getAuthentication();
+        Object u = userService.getUser();
+//        model.addAttribute("user", u);
+        model.addAttribute("email", u);
         return "user/index";
     }
 
