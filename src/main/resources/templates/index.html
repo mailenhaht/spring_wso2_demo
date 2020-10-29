@@ -12,7 +12,6 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>OAuth2 Login </title>
@@ -38,13 +37,17 @@
     <div>
         <span style="font-weight:bold" th:text="${idtoken}"></span>
     </div>
-    <div>LastName: <span th:text="${idtoken.family_name}"></span></div>
-    <div>Address: <span th:text="${idtoken.address.address}"></span></div>
+<!--    <div>LastName: <span th:text="${idtoken.family_name}"></span></div>-->
+<!--    <div>Address: <span th:text="${idtoken.address.address}"></span></div>-->
     <div>Email: <span th:text="${idtoken.email}"></span></div>
-<!--    <div>Website: <span th:text="${idtoken.website}"></span></div>-->
-    <div>Phone: <span th:text="${idtoken.phone_number}"></span></div>
+<!--    <div>Phone: <span th:text="${idtoken.phone_number}"></span></div>-->
+    <span>Info reponse:</span>
+<!--    <div>-->
+<!--        <span style="font-weight:bold" th:text="${userResponse}"></span>-->
+<!--    </div>-->
 </div>
-<div><a href="https://localhost:9444/oidc/logout">Logout WSO2</a> </div>
-<div><a href="/logout">Logout Spring</a> </div>
+<div><a href="https://htid.hungthinhcorp.com.vn/oidc/logout">Logout WSO2</a> </div>
+<div><a href="/user">User</a> </div>
+<div><a href="/user/access_token">User Access Token</a> </div>
 </body>
 </html>
